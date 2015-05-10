@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C30FA385-0CEF-44E9-92FB-2EF76E47AEAD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>30F0F4CED60E27F099FC8B614E830ACAD2FC79C2</key>
+		<string>https://github.com/viccarre/IntelEdisonExamples.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WiFi_rest.ino/Robotic Arm App/I.G.R.A.C./I.G.R.A.C..xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>30F0F4CED60E27F099FC8B614E830ACAD2FC79C2</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/viccarre/IntelEdisonExamples.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>30F0F4CED60E27F099FC8B614E830ACAD2FC79C2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>30F0F4CED60E27F099FC8B614E830ACAD2FC79C2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IntelEdisonExamples</string>
+		</dict>
+	</array>
+</dict>
+</plist>
