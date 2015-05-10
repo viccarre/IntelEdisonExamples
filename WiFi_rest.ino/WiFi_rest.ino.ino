@@ -1,14 +1,9 @@
-/* 
-  This a simple example of the aREST Library for Arduino (Uno/Mega/Due/Teensy)
-  using the WiFi library (for example to be used with the Arduino WiFi shield). 
-  See the README file for more details.
- 
-  Written in 2014 by Marco Schwartz under a GPL license. 
-*/
 
 #include <SPI.h>
 #include <WiFi.h>
 #include <aREST.h>
+#include <iostream>
+#include <String>
 
 char ssid[] = "MassChallenge Now"; //  your network SSID (name)
 char pass[] = "hackster15";    // your network password (use for WPA, or use as key for WEP)
@@ -30,21 +25,21 @@ void setup() {
 
   // Start Serial
   Serial.begin(115200);
-  
+
   // Init variables and expose them to REST API
   temperature = 24;
   humidity = 40;
-  rest.variable("temperature",&temperature);
-  rest.variable("humidity",&humidity);
-  
-  rest.function("led",ledControl);
-  
+  rest.variable("temperature", &temperature);
+  rest.variable("humidity", &humidity);
+
+  rest.function("led", ledControl);
+
   // Give name and ID to device
   rest.set_id("008");
   rest.set_name("viccarre_Edison");
 
   // Function to be exposed
-  rest.function("led",ledControl);
+  rest.function("led", ledControl);
   rest.function("message", printMessage);
 
   // check for the presence of the shield:
@@ -78,25 +73,46 @@ void setup() {
 
 
 void loop() {
-  
+
   // listen for incoming clients
   WiFiClient client = server.available();
   rest.handle(client);
-  
+
 }
 
-int printMessage(String command){
+int printMessage(String command) {
   Serial.println(command);
-  Serial.println("Message");
-  return 1;
+  int pos, posAux;
   
+  //Getting the first value
+  String stringAux; 
+  pos = command.indexOf(',');
+  String string1 = command.substring(0,pos);
+  stringAux = command.substring(pos+1);
+  Serial.print("String 1: ");
+  Serial.println(string1);
+  
+  //Second Value
+  pos = stringAux.indexOf(',');
+  string1= stringAux.substring(0,pos);
+  stringAux = stringAux.substring(pos+1);
+  Serial.print("String 2: ");
+  Serial.println(string1);
+  
+  //Third Value
+  Serial.print("String 3: ");
+  Serial.println(stringAux);
+
+  
+  return 1;
+
 }
 // Custom function accessible by the API
 int ledControl(String command) {
-  
+
   // Get state from command
   int state = command.toInt();
-  digitalWrite(13,state);
+  digitalWrite(13, state);
   Serial.println("LED function called");
   return 1;
 }
