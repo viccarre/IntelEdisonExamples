@@ -2,8 +2,8 @@
 #include <SPI.h>
 #include <WiFi.h>
 
-char ssid[] = "YourNetwork";      //  your network SSID (name) 
-char pass[] = "networdPassword";   // your network password
+char ssid[] = "MassChallenge Now";      //  your network SSID (name) 
+char pass[] = "hackster15";   // your network password
 int keyIndex = 0;                 // your network key Index number (needed only for WEP)
 
 int status = WL_IDLE_STATUS;
@@ -75,7 +75,9 @@ void loop() {
         else if (c != '\r') {    // if you got anything else but a carriage return character,
           currentLine += c;      // add it to the end of the currentLine
         }
-
+        
+        Serial.println("Current Line");
+        Serial.println(currentLine);
         // Check to see if the client request was "GET /H" or "GET /L":
         if (currentLine.endsWith("GET /H")) {
           digitalWrite(7, HIGH);           // GET /H turns the LED on
